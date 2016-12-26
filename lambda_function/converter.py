@@ -7,18 +7,16 @@ FILENAME = 'formulas.csv'
 FRAC = "\\frac{"
 CDOT = " \\cdot "
 
-
 def find_est(rate, estimates):
  result = {}
  result['rate'] = rate
    
- exponent = math.floor(math.log(rate,10))
- rate /= 10**exponent
- print(exponent)
- print(rate)
+ exponent = int(math.floor(math.log(rate,10)))
+ if not exponent == -1:
+  rate /= 10**exponent
 
  multStr = "1"
- for i in range(0,abs(int(exponent))):
+ for i in range(0,abs(exponent)):
   multStr += "0"
 
  error_tuples = []
@@ -38,7 +36,7 @@ def find_est(rate, estimates):
    if exponent > 0:
     formula['expression'] = est[1][2] + CDOT + multStr
    else:
-    if exponent < 0:
+    if exponent < -1:
      formula['expression'] = FRAC + est[1][2] + "}{" + multStr + "}"
     else:
      formula['expression'] = est[1][2]
@@ -65,5 +63,3 @@ def handler(event, context):
   return find_est(rate,estimates)
  else:
   raise Exception("No rate given")
-  
-#print(handler({'rate': sys.argv[1]}, None))

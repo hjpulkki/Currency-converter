@@ -35,7 +35,7 @@ function addOptions(data, status) {
 		rate = rates[currency];
 		
 		from_img = document.createElement("img");
-		from_img.src = "http://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
+		from_img.src = "https://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
 		
 		from_option = document.createElement("option");
 		from_option.value = currency;
@@ -49,7 +49,7 @@ function addOptions(data, status) {
 		$('#from').append(from_option);
 		
 		to_img = document.createElement("img");
-		to_img.src = "http://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
+		to_img.src = "https://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
 		
 		to_option = document.createElement("option");
 		to_option.value = currency;
