@@ -35,12 +35,13 @@ function addOptions(data, status) {
 		rate = rates[currency];
 		
 		from_img = document.createElement("img");
-		from_img.src = "flags/" + currency.toLowerCase() + ".png"
+		from_img.src = "flags/" + currency + ".png";
+		from_img.width = "30";
 		
 		from_option = document.createElement("option");
 		from_option.value = currency;
 		from_option.append(from_img);
-		from_option.append(currency);
+		from_option.append(" " + currency);
 		
 		if(currency === 'USD'){
 			from_option.selected = "selected";
@@ -49,12 +50,13 @@ function addOptions(data, status) {
 		$('#from').append(from_option);
 		
 		to_img = document.createElement("img");
-		to_img.src = "https://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
-		
+		to_img.src = "flags/" + currency + ".png";
+		to_img.width = "30";
 		to_option = document.createElement("option");
 		to_option.value = currency;
+		//to_option.append(to_img);
 		to_option.append(to_img);
-		to_option.append(currency);
+		to_option.append(' ' + currency);
 		
 		if(currency === 'EUR'){
 			to_option.selected = "selected";
@@ -62,8 +64,9 @@ function addOptions(data, status) {
 		
 		$('#to').append(to_option);
 	}
-	$('.selectpicker').selectpicker();
+	
 	getRate();
+	$('.selectpicker').selectpicker();
 }
 
 function getRate(){
