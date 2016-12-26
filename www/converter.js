@@ -35,7 +35,7 @@ function addOptions(data, status) {
 		rate = rates[currency];
 		
 		from_img = document.createElement("img");
-		from_img.src = "https://www.xe.com/themes/xe/images/flags/" + currency.toLowerCase() + ".png"
+		from_img.src = "flags/" + currency.toLowerCase() + ".png"
 		
 		from_option = document.createElement("option");
 		from_option.value = currency;
@@ -75,7 +75,7 @@ function getRate(){
 		rate = Math.round(to_rate/from_rate*100000)/100000;
 		document.getElementById("rate_input").value = rate;
 
-		instructions = "You can convert x " + from_cur + " to " + to_cur + " with the following formulas. The first formulas are the most accurate ones, but might also be slightly difficult."
+		instructions = "You can convert <i>x</i> " + from_cur + " to " + to_cur + " with the following formulas. The first formulas are the most accurate ones, but might also be slightly difficult."
 		document.getElementById("instructions").innerHTML = instructions;
 				
 		calculateFormulas();
