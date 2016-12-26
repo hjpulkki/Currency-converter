@@ -107,4 +107,6 @@ wget http://www.currencysymbols.in/flags/uzbekistan.png -O UZS.png
 wget http://www.currencysymbols.in/flags/venezuela.png -O VEF.png
 wget http://www.currencysymbols.in/flags/vietnam.png -O VND.png
 wget http://www.currencysymbols.in/flags/yemen.png -O YER.png
-wget http://www.currencysymbols.in/flags/zimbabwe.png -O ZWD
+wget http://www.currencysymbols.in/flags/zimbabwe.png -O ZWD.png
+wget http://www.currencysymbols.in/flags/turkey.png -O TRY.png
+
