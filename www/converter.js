@@ -29,8 +29,9 @@ MathJax.Hub.Typeset();
 }
 
 function addOptions(data, status) {
-	rates = data.rates
-	rates.EUR = 1
+	rates = data.rates;
+	rates.EUR = 1;
+	$('#from').empty();
 	for( currency in data.rates){
 		rate = rates[currency];
 		
@@ -64,10 +65,14 @@ function addOptions(data, status) {
 		
 		$('#to').append(to_option);
 	}
-	
 	getRate();
-	$('.selectpicker').selectpicker();
 }
+
+$(document).ready(function() {
+  //$("#from").selectpicker('refresh');
+  //$("#to").selectpicker('refresh');
+});
+
 
 function getRate(){
 	from_cur = $('#from').val();
@@ -93,6 +98,6 @@ function swap(){
 	$('#to').selectpicker('val', from_cur);
 	
 	getRate();
-;
+	$('.selectpicker').selectpicker({});
 }
 
