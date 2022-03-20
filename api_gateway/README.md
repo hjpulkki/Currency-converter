@@ -1,1 +1,0 @@
-The swagger file in this folder can be used to create API gateway on AWS. Its task is to expose the lambda function publicly to the web.
